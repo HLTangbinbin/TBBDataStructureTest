@@ -21,13 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
-//  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-//                                                   moduleName:@"AwesomeProject"
-//                                            initialProperties:nil];
-//  
-//  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-//  self.view = rootView;
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+                                                   moduleName:@"AwesomeProject"
+                                            initialProperties:nil];
+  
+  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+  self.view = rootView;
   [MobileApiHandler requestWithPath1:path1 prepare:nil success:^(OneEntity *entity) {
     NSArray *phoneArr = [NSArray array];
     PhoneEntity *computerEntity = [[PhoneEntity alloc] init];
