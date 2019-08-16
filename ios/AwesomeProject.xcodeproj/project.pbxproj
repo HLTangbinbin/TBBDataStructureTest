@@ -18,6 +18,14 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* AwesomeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AwesomeProjectTests.m */; };
 		65223BFE4846F6A336F69B54 /* libPods-AwesomeProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B44125B426A3E87EA25482D7 /* libPods-AwesomeProject.a */; };
+		7C27AC4A230660A600B852A4 /* HCJSONResponseSerializerWithData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC47230660A600B852A4 /* HCJSONResponseSerializerWithData.m */; };
+		7C27AC4B230660A600B852A4 /* HCHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC48230660A600B852A4 /* HCHttpClient.m */; };
+		7C27AC4E230660B500B852A4 /* BaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC4D230660B500B852A4 /* BaseHandler.m */; };
+		7C27AC512306816D00B852A4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC502306816D00B852A4 /* TestViewController.m */; };
+		7C27AC542306868D00B852A4 /* MobileApiHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC522306868C00B852A4 /* MobileApiHandler.m */; };
+		7C27AC5723068F9E00B852A4 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC5523068F9E00B852A4 /* BaseEntity.m */; };
+		7C27AC692306959500B852A4 /* OneEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC682306959500B852A4 /* OneEntity.m */; };
+		7C27AC6F2306980000B852A4 /* PhoneEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C27AC6E2306980000B852A4 /* PhoneEntity.m */; };
 		891B161F071D3B9EA1298867 /* libPods-AwesomeProject-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A381BCFFE9F3A416C320E48A /* libPods-AwesomeProject-tvOS.a */; };
 		BCBC9308AE31AA04789F1B00 /* libPods-AwesomeProject-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5208652DB7E135D795FE10E3 /* libPods-AwesomeProject-tvOSTests.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +64,22 @@
 		2D02E4901E0B4A5D006451C7 /* AwesomeProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AwesomeProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49815AD0471CDD5ECA8B363F /* Pods-AwesomeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.release.xcconfig"; sourceTree = "<group>"; };
 		5208652DB7E135D795FE10E3 /* libPods-AwesomeProject-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProject-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C27AC46230660A600B852A4 /* HCHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCHttpClient.h; sourceTree = "<group>"; };
+		7C27AC47230660A600B852A4 /* HCJSONResponseSerializerWithData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCJSONResponseSerializerWithData.m; sourceTree = "<group>"; };
+		7C27AC48230660A600B852A4 /* HCHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCHttpClient.m; sourceTree = "<group>"; };
+		7C27AC49230660A600B852A4 /* HCJSONResponseSerializerWithData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCJSONResponseSerializerWithData.h; sourceTree = "<group>"; };
+		7C27AC4C230660B400B852A4 /* BaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHandler.h; sourceTree = "<group>"; };
+		7C27AC4D230660B500B852A4 /* BaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHandler.m; sourceTree = "<group>"; };
+		7C27AC4F2306816D00B852A4 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7C27AC502306816D00B852A4 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		7C27AC522306868C00B852A4 /* MobileApiHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileApiHandler.m; sourceTree = "<group>"; };
+		7C27AC532306868C00B852A4 /* MobileApiHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileApiHandler.h; sourceTree = "<group>"; };
+		7C27AC5523068F9E00B852A4 /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEntity.m; sourceTree = "<group>"; };
+		7C27AC5623068F9E00B852A4 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseEntity.h; sourceTree = "<group>"; };
+		7C27AC672306959500B852A4 /* OneEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneEntity.h; sourceTree = "<group>"; };
+		7C27AC682306959500B852A4 /* OneEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneEntity.m; sourceTree = "<group>"; };
+		7C27AC6D2306980000B852A4 /* PhoneEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneEntity.h; sourceTree = "<group>"; };
+		7C27AC6E2306980000B852A4 /* PhoneEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneEntity.m; sourceTree = "<group>"; };
 		8A1886058CEA25E499DC1D6E /* Pods-AwesomeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A381BCFFE9F3A416C320E48A /* libPods-AwesomeProject-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProject-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E09EF4881BF26DD143C7A8 /* Pods-AwesomeProject-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProject-tvOS/Pods-AwesomeProject-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,9 +149,14 @@
 		13B07FAE1A68108700A75B9A /* AwesomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				7C27AC5923068FFB00B852A4 /* Entity */,
+				7C27AC5823068FE800B852A4 /* Handle */,
+				7C27AC45230660A600B852A4 /* HttpClient */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				7C27AC4F2306816D00B852A4 /* TestViewController.h */,
+				7C27AC502306816D00B852A4 /* TestViewController.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -162,6 +191,41 @@
 				F2E7BCDE7FB9B9F901AE37CC /* libPods-AwesomeProjectTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C27AC45230660A600B852A4 /* HttpClient */ = {
+			isa = PBXGroup;
+			children = (
+				7C27AC46230660A600B852A4 /* HCHttpClient.h */,
+				7C27AC47230660A600B852A4 /* HCJSONResponseSerializerWithData.m */,
+				7C27AC48230660A600B852A4 /* HCHttpClient.m */,
+				7C27AC49230660A600B852A4 /* HCJSONResponseSerializerWithData.h */,
+			);
+			path = HttpClient;
+			sourceTree = "<group>";
+		};
+		7C27AC5823068FE800B852A4 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				7C27AC4C230660B400B852A4 /* BaseHandler.h */,
+				7C27AC4D230660B500B852A4 /* BaseHandler.m */,
+				7C27AC532306868C00B852A4 /* MobileApiHandler.h */,
+				7C27AC522306868C00B852A4 /* MobileApiHandler.m */,
+			);
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		7C27AC5923068FFB00B852A4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7C27AC5623068F9E00B852A4 /* BaseEntity.h */,
+				7C27AC5523068F9E00B852A4 /* BaseEntity.m */,
+				7C27AC672306959500B852A4 /* OneEntity.h */,
+				7C27AC682306959500B852A4 /* OneEntity.m */,
+				7C27AC6D2306980000B852A4 /* PhoneEntity.h */,
+				7C27AC6E2306980000B852A4 /* PhoneEntity.m */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -528,8 +592,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C27AC512306816D00B852A4 /* TestViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				7C27AC542306868D00B852A4 /* MobileApiHandler.m in Sources */,
+				7C27AC6F2306980000B852A4 /* PhoneEntity.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				7C27AC4A230660A600B852A4 /* HCJSONResponseSerializerWithData.m in Sources */,
+				7C27AC4E230660B500B852A4 /* BaseHandler.m in Sources */,
+				7C27AC692306959500B852A4 /* OneEntity.m in Sources */,
+				7C27AC4B230660A600B852A4 /* HCHttpClient.m in Sources */,
+				7C27AC5723068F9E00B852A4 /* BaseEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
