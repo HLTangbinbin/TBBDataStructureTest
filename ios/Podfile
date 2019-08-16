@@ -3,6 +3,8 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 target 'AwesomeProject' do
   # Pods for AwesomeProject
+  pod 'AFNetworking','~>3.1.0'
+  pod 'MJExtension','~>3.0.13'
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
