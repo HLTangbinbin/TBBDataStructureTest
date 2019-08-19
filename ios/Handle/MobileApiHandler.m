@@ -27,7 +27,8 @@
 {
   NSString *str_url = [self requestUrlWithHttpPath:path];
   [BaseHandler requestWithPath:str_url method:RTHttpRequestPost parameters:nil prepare:prepare success:^(id responseObject) {
-    success(responseObject);
+    NSArray *oneEntitys = [OneEntity parseObjectArrayWithKeyValues:[responseObject objectForKey:@"data"]];
+    success(oneEntitys);
   } failure:failed];
   
 }
@@ -36,7 +37,8 @@
 {
   NSString *str_url = [self requestUrlWithHttpPath:path];
   [BaseHandler requestWithPath:str_url method:RTHttpRequestPost parameters:nil prepare:prepare success:^(id responseObject) {
-    success(responseObject);
+    NSArray *oneEntitys = [OneEntity parseObjectArrayWithKeyValues:[responseObject objectForKey:@"data"]];
+    success(oneEntitys);
   } failure:failed];
   
 }
