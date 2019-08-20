@@ -35,10 +35,10 @@
 //  [self requestWithPath4];
 //  [self requestWithPath5];
 //  [self requestWithPath6];
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
-    [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
-  });
+//  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
+//    [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
+//  });
 }
 
 - (void)requestWithPath1 {
