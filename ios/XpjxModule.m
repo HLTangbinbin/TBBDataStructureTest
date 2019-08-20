@@ -28,10 +28,8 @@ RCT_EXPORT_METHOD(handleMessage:(NSDictionary *)msg resolver:(RCTPromiseResolveB
     NSString *RCTTypeString = [msg objectForKey:@"type"];
     NSString *dataString = [msg objectForKey:@"data"];
     if ([RCTTypeString isEqualToString:RCTTypeEventShowLogin]){
-      
-      NSDictionary *BigPic =  [msg objectForKey:@"productImage"];
-      NSString *index = [NSString stringWithFormat:@"%@",[BigPic objectForKey:@"index"]];
-      NSArray *picArray = [BigPic objectForKey:@"path"];
+      NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
+      [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
       
     }
   });
