@@ -11,7 +11,7 @@
 #define WeakSelf __weak typeof(self) weakSelf = self;
 
 
-static  NSString* const RCTTypeLookBigPic = @"lookBigPic";
+static  NSString* const RCTTypeEventShowLogin = @"showLogin";
 
 @interface XpjxModule()<RCTBridgeModule,UIActionSheetDelegate>
 
@@ -27,11 +27,9 @@ RCT_EXPORT_METHOD(handleMessage:(NSDictionary *)msg resolver:(RCTPromiseResolveB
   dispatch_async(dispatch_get_main_queue(), ^{
     NSString *RCTTypeString = [msg objectForKey:@"type"];
     NSString *dataString = [msg objectForKey:@"data"];
-    if ([RCTTypeString isEqualToString:RCTTypeLookBigPic]){
-      
-      NSDictionary *BigPic =  [msg objectForKey:@"productImage"];
-      NSString *index = [NSString stringWithFormat:@"%@",[BigPic objectForKey:@"index"]];
-      NSArray *picArray = [BigPic objectForKey:@"path"];
+    if ([RCTTypeString isEqualToString:RCTTypeEventShowLogin]){
+      NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
+      [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
       
     }
   });
