@@ -10,7 +10,7 @@
 #import "PhoneEntity.h"
 
 @implementation OneEntity
-MJExtensionCodingImplementation
+//MJExtensionCodingImplementation
 + (NSDictionary *)objectClassInArray
 {
   return @{

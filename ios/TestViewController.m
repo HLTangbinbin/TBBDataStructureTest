@@ -12,6 +12,7 @@
 #import "MobileApiHandler.h"
 #import "OneEntity.h"
 #import "PhoneEntity.h"
+#import "XpjxModule.h"
 
 @interface TestViewController ()
 
@@ -32,7 +33,10 @@
 //  [self requestWithPath2];
 //  [self requestWithPath3];
 //  [self requestWithPath4];
-  [self requestWithPath5];
+//  [self requestWithPath5];
+//  [self requestWithPath6];
+  NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
+  [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
 }
 
 - (void)requestWithPath1 {
@@ -98,7 +102,16 @@
 
 - (void)requestWithPath5 {
   [MobileApiHandler requestWithPath5:path5 prepare:nil success:^(id responseObject) {
-    NSLog(@"请求回来的数据%@",[responseObject objectForKey:@"data"]);
+    NSLog(@"请求回来的data%@",[responseObject objectForKey:@"data"]);
+    
+  } failed:^(NSInteger statusCode, NSString *msg) {
+    NSLog(@"请求数据失败******%@",msg);
+  }];
+}
+
+- (void)requestWithPath6 {
+  [MobileApiHandler requestWithPath6:path6 prepare:nil success:^(id responseObject) {
+    NSLog(@"请求回来的data%@",[responseObject objectForKey:@"data"]);
     
   } failed:^(NSInteger statusCode, NSString *msg) {
     NSLog(@"请求数据失败******%@",msg);

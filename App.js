@@ -24,6 +24,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+// class HomeScreen extends React.Component {
+//   static navigationOptions = {
+//     title: 'Home',
+//   };
+
+  /* render function, etc */
+// }
 const App = () => {
   return (
     <Fragment>

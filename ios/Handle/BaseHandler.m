@@ -22,7 +22,8 @@ static NSString * const signKey = @"cefbacbdee0a4c3ebdd0596e20cec29d";
         serverUrl = nil;
     }
     if(!serverUrl){
-      serverUrl = @"http://192.168.1.103:9999";
+//      serverUrl = @"http://192.168.1.103:9999";
+      serverUrl = @"http://apiuser.dev.xpcto.com";
     }
 
     NSString *serverPath = [serverUrl stringByAppendingString:path];
@@ -127,9 +128,45 @@ static NSString * const signKey = @"cefbacbdee0a4c3ebdd0596e20cec29d";
 }
 
 + (NSMutableDictionary*)getAuthParameters {
-    NSMutableDictionary *paramsDic = [NSMutableDictionary dictionary];
+  NSMutableDictionary *paramsDic = [NSMutableDictionary dictionary];
+  [paramsDic setObject:@"" forKey:@"session_id"];
+  [paramsDic setObject:@"" forKey:@"appversion"];
+  [paramsDic setObject:[NSString stringWithFormat:@"ios_c_%@",@""] forKey:@"fr"];
   
-    return paramsDic;
+//  //优先从钥匙串中获取 deviceId
+//  NSString* udidString = [SAMKeychain passwordForService:[NSBundle mainBundle].bundleIdentifier account:@"deviceid"];
+//  if(udidString == nil || [udidString isEqualToString:@""]){
+//    
+//    //未获取到就取 udid ,然后存入钥匙串
+//    udidString = [[UIDevice currentDevice].identifierForVendor UUIDString];
+//    //BASE64加密
+//    NSData *originData = [udidString dataUsingEncoding:NSASCIIStringEncoding];
+//    udidString = [originData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+//    [SAMKeychain setPassword:udidString forService:[NSBundle mainBundle].bundleIdentifier account:@"deviceid"];
+//    
+//  }
+  [paramsDic setObject:@"ddddddd" forKey:@"deviceid"];
+  
+  //    NSInteger cityCode =  [GlobalInfo sharedInstance].curCityData.code;
+  //    [paramsDic setObject:[NSNumber numberWithInteger:cityCode] forKey:@"cityCode"];
+  [paramsDic setObject:@"340" forKey:@"cityCode"];
+  [paramsDic setObject:@"uid" forKey:@"uniqueId"];
+  [paramsDic setObject:@"dekey" forKey:@"dvkey"];
+  
+  [paramsDic setObject:@"idfa" forKey:@"idfa"];
+  // 保证接口安全性，添加sign签名，作为公共参数
+  NSString *sessionId = [paramsDic valueForKey:@"session_id"];
+  NSString *deviceid = [paramsDic valueForKey:@"deviceid"];
+  NSString *fr = [paramsDic valueForKey:@"fr"];
+  NSString *uniqueId = [paramsDic valueForKey:@"uniqueId"];
+  NSString *timestamp =  @"11111";
+  NSString *signKeyStr = [NSString stringWithFormat:@"%@%@",[signKey substringToIndex:4],[signKey substringFromIndex:28]];
+  NSString *signStr = [NSString stringWithFormat:@"session_id=%@&deviceid=%@&fr=%@&uniqueId=%@&timestamp=%@&%@",sessionId,deviceid,fr,uniqueId,timestamp,signKeyStr];
+  //对signStr做md5加密
+//  NSString *signKeyMd5 = [NSString md5:signStr];
+  [paramsDic setObject:@"sign" forKey:@"sign"];
+  [paramsDic setObject:timestamp forKey:@"timestamp"];
+  return paramsDic;
 }
 
 + (void)requestWithPath:(NSString *)url
@@ -154,7 +191,7 @@ static NSString * const signKey = @"cefbacbdee0a4c3ebdd0596e20cec29d";
                                                   if([responseObject isKindOfClass:[NSDictionary class]]){
                                                       if([responseObject objectForKey:@"code"]){
                                                           NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
-                                                          if(code == 200){
+                                                          if(code == 0){
                                                              NSLog(@"🌍🌍🌍%@返回数据:\n%@",url,responseObject);
                                                               success(responseObject);
                                                               return;

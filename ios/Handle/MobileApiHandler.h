@@ -13,6 +13,8 @@
 #define path3  @"/index/index/emptyArray"
 #define path4  @"/index/index/emptyString"
 #define path5  @"/index/index/nullData"
+#define path6  @"/index/index/emptyData"
+
 
 @interface MobileApiHandler : BaseHandler
 
@@ -22,5 +24,4 @@
 + (void)requestWithPath4:(NSString *)path prepare:(PrepareBlock)prepare success:(SuccessBlock)success failed:(FailedBlock)failed;
 + (void)requestWithPath5:(NSString *)path prepare:(PrepareBlock)prepare success:(SuccessBlock)success failed:(FailedBlock)failed;
 + (void)requestWithPath6:(NSString *)path prepare:(PrepareBlock)prepare success:(SuccessBlock)success failed:(FailedBlock)failed;
-
 @end
