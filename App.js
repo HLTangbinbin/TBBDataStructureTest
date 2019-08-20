@@ -14,8 +14,10 @@ import {
   View,
   Text,
   StatusBar,
-  NativeModules,
-  NativeEventEmitter,
+    TouchableOpacity,
+    NativeEventEmitter,
+    NativeModules,
+    DeviceEventEmitter,
 } from 'react-native';
 
 import {
@@ -45,11 +47,33 @@ class App extends Component {
 
     componentDidMount(){
         // this.fetchBookinfoList();
-        this.listener = new NativeEventEmitter(NativeModules.XpjxModule).addListener("getSessionIdEvent", (result) => {
-            console.log(result)
-        })
+        // alert("result")
+
+        // setTimeout(()=>{
+
+            this.listener = new NativeEventEmitter(NativeModules.XpjxModule).addListener("getSessionIdEvent", (result) => {
+                console.log('aaa');
+                console.log(result.type);
+                console.log(result.sessionId);
+                console.log(result.money);
+                console.log(result.page);
+                alert(result.sessionId);
+            })
+        // },10000);
+
     }
 
+    componentWillUnmount() {
+        this.listener && this.listener.remove();
+    }
+
+    toggleModal() {
+        NativeModules.XpjxModule.handleMessage({
+            type: 'showLogin',
+        }).then(() => {
+            this.showToast("清除缓存成功");
+        })
+    }
     fetchBookinfoList() {
         // alert('yyy')
         fetch("http://192.168.1.103:9999/index/index/manyperson",{
@@ -98,6 +122,9 @@ class App extends Component {
             </View>
           )}
           <View style={styles.body}>
+            <TouchableOpacity onPress={()=>this.toggleModal()}>
+              <Text>服务</Text>
+            </TouchableOpacity>
             <View style={styles.sectionContainer}>
               <Text>{this.state.a}</Text>
               <Text style={styles.sectionTitle}>Step One</Text>
