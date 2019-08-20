@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
+import React, {Fragment,Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,6 +14,8 @@ import {
   View,
   Text,
   StatusBar,
+  NativeModules,
+  NativeEventEmitter,
 } from 'react-native';
 
 import {
@@ -24,7 +26,64 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App = () => {
+class App extends Component {
+
+    constructor(props){
+        super();
+        this.state = {
+            a:"11",
+            singlePerson: 'index/index/singlePerson',
+            manyPerson: 'index/index/manyPerson',
+            emptyArray: 'index/index/emptyArray',
+            emptyString: 'index/index/emptyString',
+            nullData: 'index/index/nullData',
+            data: '{"code":200,"msg":"success","time":1566272544,"data":[{"age":20,"name":"张大千","rich":12.2,"sex":true},{"age":20,"name":"张大千","rich":12.2,"sex":false},{"age":20,"name":"张大千","rich":12.2,"sex":true},{"age":20,"name":"张大千","rich":12.2,"sex":false},{"age":20,"name":"张大千","rich":12.2,"sex":true}]}'
+
+        };
+        this.fetchBookinfoList = this.fetchBookinfoList.bind(this)
+    }
+
+    componentDidMount(){
+        // this.fetchBookinfoList();
+        this.listener = new NativeEventEmitter(NativeModules.XpjxModule).addListener("getSessionIdEvent", (result) => {
+            console.log(result)
+        })
+    }
+
+    fetchBookinfoList() {
+        // alert('yyy')
+        fetch("http://192.168.1.103:9999/index/index/manyperson",{
+          method: 'GET',
+          headers: {'Content-Type': "application/json"},
+          // body: {}
+        }).then((response) => response.text())
+          .then((responseData) => {
+              // alert(responseData)
+              let res = this.state.data;
+              responseData = JSON.parse(responseData);
+              res = JSON.parse(res);
+              console.log(res.data[0].name);
+              console.log(responseData.data);
+              alert(res.data[0].name);
+              if(responseData.code == '200'){
+                  // alert(responseData.data.computer.size_a == '15.6');
+              }else{
+                  // alert('error')
+              }
+              // alert(responseData.code);
+              // alert(responseData.msg);
+              // alert(responseData.time);
+              // if(responseData.code == 200){
+              //     alert(responseData.data)
+              // }
+          })
+          .catch((err) => {
+              alert('err')
+          });
+
+    }
+
+    render(){
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -40,6 +99,7 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
+              <Text>{this.state.a}</Text>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
@@ -70,7 +130,10 @@ const App = () => {
       </SafeAreaView>
     </Fragment>
   );
+    }
 };
+
+
 
 const styles = StyleSheet.create({
   scrollView: {
