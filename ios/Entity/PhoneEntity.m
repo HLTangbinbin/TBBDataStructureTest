@@ -9,5 +9,5 @@
 #import "PhoneEntity.h"
 
 @implementation PhoneEntity
-
+//MJExtensionCodingImplementation
 @end
