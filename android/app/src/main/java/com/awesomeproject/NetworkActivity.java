@@ -104,21 +104,6 @@ public class NetworkActivity extends AppCompatActivity {
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String name = "张三";
-                boolean man = true;
-                int age = 20;
-                double money = 100.00;
-                float height = 175.1f;
-
-                WritableMap params = Arguments.createMap();
-                params.putString("name",name);
-                params.putString("man", man+"");
-                params.putString("age", age+"");
-                params.putString("money", money+"");
-                params.putString("height", height+"");
-                XpjxModule.sendEventToRn("getSessionIdEvent", params);
-
                startActivity(new Intent(NetworkActivity.this, MainActivity.class));
             }
         });

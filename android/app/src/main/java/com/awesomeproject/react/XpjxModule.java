@@ -2,16 +2,20 @@ package com.awesomeproject.react;
 
 import android.content.Intent;
 import android.util.Log;
-import android.view.KeyEvent;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeArray;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+
+import java.util.HashMap;
 
 
 /**
@@ -61,6 +65,45 @@ public class XpjxModule extends ReactContextBaseJavaModule {
                 switch (type) {
                     case "change_status_color":
                         String color = data.getString("color");
+                        break;
+                    case "showLogin":
+                        ReadableArray acceptArray =  data.getArray("city");
+                        ReadableMap acceptMap = data.getMap("hobby");
+                        HashMap mMap = acceptMap.toHashMap();
+                        Log.d(TAG,"----------------已收到消息 ：" + data.getInt("age")
+                        + "," + data.getBoolean("man"));
+
+                        for (int i = 0; i < acceptArray.size(); i++) {
+                            Log.d(TAG, acceptArray.getString(i));
+                        }
+                        for (int j = 1; j <= acceptArray.size(); j++) {
+                            Log.d(TAG, mMap.get("hobby"+j).toString());
+                        }
+                        Log.d(TAG,"----------------消息接收完毕");
+
+                        String name = "张三";
+                        boolean man = true;
+                        int age = 20;
+                        double money = 100.00;
+                        float height = 175.1f;
+
+                        WritableArray array = new WritableNativeArray();
+                        array.pushString("北京");
+                        array.pushString("上海");
+                        array.pushString("广州");
+                        array.pushString("深圳");
+
+                        WritableMap params = Arguments.createMap();
+                        params.putString("name",name);
+                        params.putBoolean("man", man);
+                        params.putInt("age", age);
+                        params.putDouble("money", money);
+                        params.putDouble("height", height);
+                        params.putArray("city",array);
+                        params.putString("cityName",null);
+
+                        XpjxModule.sendEventToRn("getSessionIdEvent", params);
+                        Log.d(TAG,"已发送消息");
                         break;
                 }
             }
