@@ -26,7 +26,12 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(handleMessage:(NSDictionary *)msg resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
   dispatch_async(dispatch_get_main_queue(), ^{
     NSString *RCTTypeString = [msg objectForKey:@"type"];
-    NSString *dataString = [msg objectForKey:@"data"];
+    NSDictionary *data = [msg objectForKey:@"data"];
+    BOOL isTrue = [msg objectForKey:@"man"];
+    NSNumber *age = [msg objectForKey:@"age"];
+    NSArray *dataString = [msg objectForKey:@"city"];
+    NSDictionary *dict = [msg objectForKey:@"hobby"];
+    NSLog(@"data:%@---年龄:%@---性别:%d---第一组数据%@,字典里对应的字段hobby3:%@",data,age,isTrue,dataString.firstObject,dict[@"hobby3"]);
     if ([RCTTypeString isEqualToString:RCTTypeEventShowLogin]){
       NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
       [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
