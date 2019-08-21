@@ -94,7 +94,8 @@ class App extends Component {
                 hobby2: 'reading',
                 hobby3: 'reading',
                 hobby4: 'reading'
-            }
+            },
+            data: null
         }).then(() => {
             // this.showToast("清除缓存成功");
         })
