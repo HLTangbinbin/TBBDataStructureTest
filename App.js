@@ -61,7 +61,7 @@ class App extends Component {
                 console.log(Platform.OS)
                 if (Platform.OS === 'android') {
                     alert(result.name + result.man + result.age + result.money + result.height + result.city);
-                    console.log(typeof(result.type))
+                    console.log(typeof(result.name))
                     console.log(typeof(result.man))
                     console.log(typeof(result.age))
                     console.log(typeof(result.money))
@@ -86,6 +86,15 @@ class App extends Component {
     toggleModal() {
         NativeModules.XpjxModule.handleMessage({
             type: 'showLogin',
+            age: 20,
+            man: false,
+            city: ['北京','上海','深圳'],
+            hobby: {
+                hobby1: 'reading',
+                hobby2: 'reading',
+                hobby3: 'reading',
+                hobby4: 'reading'
+            }
         }).then(() => {
             // this.showToast("清除缓存成功");
         })
