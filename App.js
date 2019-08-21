@@ -60,13 +60,14 @@ class App extends Component {
                 // console.log(result.page);
                 console.log(Platform.OS)
                 if (Platform.OS === 'android') {
-                    alert(result.name + result.man + result.age + result.money + result.height + result.city);
+                    alert(result.name + result.man + result.age + result.money + result.height + result.city + result.cityName);
                     console.log(typeof(result.name))
                     console.log(typeof(result.man))
                     console.log(typeof(result.age))
                     console.log(typeof(result.money))
                     console.log(typeof(result.height))
                     console.log(typeof(result.city))
+                    console.log(typeof(result.cityName))
                 }else{
                     alert(result.type + result.sessionId + result.money + result.page);
                     console.log(typeof(result.type))
