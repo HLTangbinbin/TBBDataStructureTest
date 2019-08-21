@@ -14,10 +14,11 @@ import {
   View,
   Text,
   StatusBar,
-    TouchableOpacity,
-    NativeEventEmitter,
-    NativeModules,
-    DeviceEventEmitter,
+  TouchableOpacity,
+  NativeEventEmitter,
+  NativeModules,
+  DeviceEventEmitter,
+  Platform,
 } from 'react-native';
 
 import {
@@ -53,11 +54,16 @@ class App extends Component {
 
             this.listener = new NativeEventEmitter(NativeModules.XpjxModule).addListener("getSessionIdEvent", (result) => {
                 console.log('aaa');
-                console.log(result.type);
-                console.log(result.sessionId);
-                console.log(result.money);
-                console.log(result.page);
-                alert(result.sessionId);
+                // console.log(result.type);
+                // console.log(result.sessionId);
+                // console.log(result.money);
+                // console.log(result.page);
+                console.log(Platform.OS)
+                if (Platform.OS === 'android') {
+                    alert(result.name + result.man + result.age + result.money + result.height);
+                }else{
+                    alert(result.type + result.sessionId + result.money + result.page);
+                }
             })
         // },10000);
 
@@ -71,7 +77,7 @@ class App extends Component {
         NativeModules.XpjxModule.handleMessage({
             type: 'showLogin',
         }).then(() => {
-            this.showToast("清除缓存成功");
+            // this.showToast("清除缓存成功");
         })
     }
     fetchBookinfoList() {
