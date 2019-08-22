@@ -53,27 +53,20 @@ class App extends Component {
         // setTimeout(()=>{
 
             this.listener = new NativeEventEmitter(NativeModules.XpjxModule).addListener("getSessionIdEvent", (result) => {
-                console.log('aaa');
-                // console.log(result.type);
-                // console.log(result.sessionId);
-                // console.log(result.money);
-                // console.log(result.page);
-                console.log(Platform.OS)
                 if (Platform.OS === 'android') {
-                    alert(result.name + result.man + result.age + result.money + result.height + result.city + result.cityName);
+                    alert(result.name +'---' + result.man +'---' + result.age +'---' + result.money +'---' + result.height +'---' + result.city);
                     console.log(typeof(result.name))
                     console.log(typeof(result.man))
                     console.log(typeof(result.age))
                     console.log(typeof(result.money))
                     console.log(typeof(result.height))
-                    console.log(typeof(result.city))
-                    console.log(typeof(result.cityName))
+                    console.log(result.city instanceof Array)
                 }else{
-                    alert(result.type + result.sessionId + result.money + result.page);
-                    console.log(typeof(result.type))
+                    alert(result.sessionId +'---' + result.type +'---'+ result.page +'---' + result.money);
                     console.log(typeof(result.sessionId))
-                    console.log(typeof(result.money))
+                    console.log(typeof(result.type))
                     console.log(typeof(result.page))
+                    console.log(typeof(result.money))
                 }
             })
         // },10000);
