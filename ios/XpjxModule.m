@@ -33,7 +33,12 @@ RCT_EXPORT_METHOD(handleMessage:(NSDictionary *)msg resolver:(RCTPromiseResolveB
     NSDictionary *dict = [msg objectForKey:@"hobby"];
     NSLog(@"data:%@---年龄:%@---性别:%d---第一组数据%@,字典里对应的字段hobby3:%@",data,age,isTrue,dataString.firstObject,dict[@"hobby3"]);
     if ([RCTTypeString isEqualToString:RCTTypeEventShowLogin]){
-      NSDictionary *dict = @{@"sessionId":@"aaaaa",@"type":[NSNumber numberWithBool:YES],@"page":[NSNumber numberWithInteger:32],@"money":[NSNumber numberWithDouble:12.34]};
+      NSDictionary *dict = @{
+                             @"sessionId":@"aaaaa",
+                             @"type":[NSNumber numberWithBool:YES],
+                             @"page":[NSNumber numberWithInteger:32],
+                             @"money":[NSNumber numberWithDouble:12.34]
+                             };
       [XpjxModule getSessionIdWithName:@"getSessionIdNotification" andContent:dict];
       
     }
