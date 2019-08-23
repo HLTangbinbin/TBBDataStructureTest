@@ -29,9 +29,9 @@ RCT_EXPORT_METHOD(handleMessage:(NSDictionary *)msg resolver:(RCTPromiseResolveB
     NSDictionary *data = [msg objectForKey:@"data"];
     BOOL isTrue = [msg objectForKey:@"man"];
     NSNumber *age = [msg objectForKey:@"age"];
-    NSArray *dataString = [msg objectForKey:@"city"];
+    NSArray *city = [msg objectForKey:@"city"];
     NSDictionary *dict = [msg objectForKey:@"hobby"];
-    NSLog(@"data:%@---年龄:%@---性别:%d---第一组数据%@,字典里对应的字段hobby3:%@",data,age,isTrue,dataString.firstObject,dict[@"hobby3"]);
+    NSLog(@"data:%@---年龄:%@---性别:%d---第一组数据%@,字典里对应的字段hobby3:%@",data,age,isTrue,city.firstObject,dict[@"hobby3"]);
     if ([type isEqualToString:RCTTypeEventShowLogin]){
       NSDictionary *dict = @{
                              @"sessionId":@"aaaaa",
