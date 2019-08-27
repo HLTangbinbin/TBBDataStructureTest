@@ -13,6 +13,7 @@ import {
     ScrollView,
     View,
     Text,
+    Button,
     StatusBar,
     TouchableOpacity,
     NativeEventEmitter,
@@ -145,6 +146,10 @@ class HomeScreen extends Component {
                             <TouchableOpacity onPress={()=>this.toggleModal()}>
                                 <Text>服务</Text>
                             </TouchableOpacity>
+                            <Button
+                                title="Go to Details"
+                                onPress={() => this.props.navigation.navigate('Details')}
+                            />
                             <View style={styles.sectionContainer}>
                                 <Text>{this.state.a}</Text>
                                 <Text style={styles.sectionTitle}>Step One</Text>
